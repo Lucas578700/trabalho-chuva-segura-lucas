@@ -136,14 +136,13 @@ export default function Cadastro() {
         };
         dataApi.append("image", photo);
       }
-      
-       await api.post(`occurrences/`, dataApi, {
+
+      await api.post(`occurrences/`, dataApi, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
         },
       });
-      
 
       reset({
         title: "",
@@ -155,7 +154,7 @@ export default function Cadastro() {
         longitude: 0,
         image: "",
       });
-      
+
       navigation.navigate("Home");
     } catch (error) {
       Alert.alert("Erro ao criar: ", error.message);
