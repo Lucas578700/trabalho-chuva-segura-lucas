@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, View } from "react-native";
+import { ActivityIndicator, View, Image } from "react-native";
 import {
   useRoute,
   useNavigation,
 } from "@react-navigation/native";
 import api from "../../services/api";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import RetanguloImg from "../../assets/Rectangle.png";
 import {
   Container,
   ScrollViewContent,
@@ -19,8 +18,10 @@ import {
   ViewHeader,
   TextHeader1,
   ImageHeader,
-  Text,
+  Description,
+  Category
 } from "./styles";
+import RetanguloImg from "../../assets/Rectangle.png";
 
 
 function Details() {
@@ -110,16 +111,18 @@ function Details() {
             }}
           />
           <Label>Descrição</Label>
-          <StyledText>{occurrence.description}</StyledText>
+          <Description>{occurrence.description}</Description>
           <Label>Categoria</Label>
-          <Text>{capitalizeFirstLetter(occurrence.category)}</Text>
+          <Category>{capitalizeFirstLetter(occurrence.category)}</Category>
           <Label>Nível de Risco</Label>
-          <StyledText>{getRiskLevelText[occurrence.risk_level]}</StyledText>
+          <Category>{getRiskLevelText[occurrence.risk_level]}</Category>
           <Label>Status</Label>
-          <StyledText>{capitalizeFirstLetter(occurrence.status)}</StyledText>
+          <Category>{capitalizeFirstLetter(occurrence.status)}</Category>
         </Card>
-
-        <Button onPress={() => onSubmitDelete()}>
+        
+        <Button activeOpacity={0.8}
+            onPress={() => onSubmitDelete()}
+            text="Excluir">
           <ButtonText>Excluir</ButtonText>
         </Button>
         <Button onPress={() => navigation.goBack()}>
@@ -131,3 +134,4 @@ function Details() {
 }
 
 export default Details;
+

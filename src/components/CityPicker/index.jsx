@@ -14,9 +14,10 @@ const CityPicker = ({ control, value, onChange, errors }) => {
                             selectedValue={value}
                             onValueChange={onChange}
                         >
-                            <Picker.Item label="Enchente" value="Enchente" />
-                            <Picker.Item label="Deslizamento" value="Deslizamento" />
-                            <Picker.Item label="Bloqueio" value="Bloqueio" />
+                            <Picker.Item label="Selecione uma cidade" value="" />
+                            <Picker.Item label="Santa Maria" value="Santa Maria" />
+                            <Picker.Item label="Agudo" value="Agudo" />
+                            <Picker.Item label="Restinga Seca" value="Restinga Seca" />
                         </Picker>
                     )}
                     name="city"

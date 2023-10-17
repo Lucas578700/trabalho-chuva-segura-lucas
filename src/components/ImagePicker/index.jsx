@@ -1,6 +1,6 @@
 import React from "react";
 import * as ImagePicker from "expo-image-picker";
-import { InputContainer, Label, Button, Text, ImageName } from './styles';
+import { Button, Text } from './styles';
 
 const ImagePickerComponent = ({ onChange, value }) => {
     const handleImagePicker = async () => {
@@ -17,13 +17,13 @@ const ImagePickerComponent = ({ onChange, value }) => {
     };
 
     return (
-        <InputContainer>
+        <>
             <Button
                 onPress={handleImagePicker}
             >
-                <Text>Nome da Imagem: {value ? value.split('/').pop() : ""}</Text>
+                <Text>Nome da imagem selecionada: {value ? value.split('/').pop() : ""}</Text>
             </Button>
-        </InputContainer>
+        </>
     );
 };
 

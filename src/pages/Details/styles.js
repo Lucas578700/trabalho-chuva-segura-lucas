@@ -67,7 +67,7 @@ export const ButtonText = styled.Text`
 
 export const ImageHeader = styled.Image`
   width: 100%;
-  height: 370;
+  height: 370px;
 `;
 
 export const ViewHeader = styled.View`
@@ -77,16 +77,28 @@ export const ViewHeader = styled.View`
 export const TextHeader1 = styled.Text`
   position: absolute;
   margin-top: 22px;
-  left: 60;
-  font-size: 35;
+  left: 60px;
+  font-size: 35px;
   font-weight: bold;
   color: white;
 `;
 
-export const TextHeader2 = styled.Text`
-position: absolute;
-  top: 180;
-  left: 60;
-  font-size: 22;
-  color: white;
+
+export const Description = styled.Text`
+border: 1px solid #68B2F8;
+margin-top: 2px;
+margin-bottom: 12px;
+height: 8%;
+width: 100%;
+`;
+
+export const Category = styled.Text`
+background-color: #68B2F8;
+margin-top: 2px;
+margin-bottom: 12px;
+height: 8%;
+width: 100%;
+color: white;
+text-align: center;
+font-weight: 500;
 `;

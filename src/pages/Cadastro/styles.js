@@ -68,7 +68,7 @@ export const ButtonText = styled.Text`
 
 export const ImageHeader = styled.Image`
   width: 100%;
-  height: 370;
+  height: 370px;
 `;
 
 export const ViewHeader = styled.View`
@@ -77,19 +77,17 @@ export const ViewHeader = styled.View`
 
 export const TextHeader1 = styled.Text`
   position: absolute;
-  top: 142;
-  left: 60;
-  font-size: 35;
+  top: 142px;
+  left: 60px;
+  font-size: 35px;
   font-weight: bold;
   color: white;
 `;
 
 export const TextHeader2 = styled.Text`
 position: absolute;
-  top: 180;
-  left: 60;
-  font-size: 22;
+  top: 180px;
+  left: 60px;
+  font-size: 22px;
   color: white;
 `;
-
-

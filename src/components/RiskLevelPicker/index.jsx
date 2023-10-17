@@ -3,15 +3,18 @@ import { Picker } from "@react-native-picker/picker";
 import { Controller } from "react-hook-form";
 import { PickerContainer, ErrorText } from "./styles";
 
-const StatusPicker = ({ control, value, onChange, errors }) => {
-  const getStatusText = {
-    "preventivo": "Preventivo",
-    "ocorrido": "Ocorrido",
+const RiskLevelPicker = ({ control, value, onChange, errors }) => {
+  const getRiskLevelText = {
+    1: "Muito Baixo",
+    2: "Baixo",
+    3: "Médio",
+    4: "Alto",
+    5: "Muito Alto",
   };
 
-  const statusOptions = Object.entries(getStatusText).map(([value, label]) => (
-    <Picker.Item label={label} value={value} key={value} />
-  ));
+  const riskLevelOptions = Object.entries(getRiskLevelText).map(
+    ([value, label]) => <Picker.Item label={label} value={value} key={value} />
+  );
 
   return (
     <>
@@ -28,16 +31,16 @@ const StatusPicker = ({ control, value, onChange, errors }) => {
               selectedValue={value}
               onValueChange={onChange}
             >
-              <Picker.Item label="Selecione um Status" value="preventivo" />
-              {statusOptions}
+              <Picker.Item label="Selecione um nível de risco" value={1} />
+              {riskLevelOptions}
             </Picker>
           )}
-          name="status"
+          name="risk_level"
         />
       </PickerContainer>
-      {errors.status && <ErrorText>{errors.status.message}</ErrorText>}
+      {errors.risk_level && <ErrorText>{errors.risk_level.message}</ErrorText>}
     </>
   );
 };
 
-export default StatusPicker;
+export default RiskLevelPicker;

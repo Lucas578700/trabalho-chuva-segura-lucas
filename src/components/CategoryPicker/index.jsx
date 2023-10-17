@@ -3,16 +3,7 @@ import { Picker } from "@react-native-picker/picker";
 import { Controller } from "react-hook-form";
 import { PickerContainer, ErrorText } from "./styles";
 
-const StatusPicker = ({ control, value, onChange, errors }) => {
-  const getStatusText = {
-    "preventivo": "Preventivo",
-    "ocorrido": "Ocorrido",
-  };
-
-  const statusOptions = Object.entries(getStatusText).map(([value, label]) => (
-    <Picker.Item label={label} value={value} key={value} />
-  ));
-
+const CategoryPicker = ({ control, value, onChange, errors }) => {
   return (
     <>
       <PickerContainer style={{ marginTop: "10%", marginBottom: "10%" }}>
@@ -28,16 +19,18 @@ const StatusPicker = ({ control, value, onChange, errors }) => {
               selectedValue={value}
               onValueChange={onChange}
             >
-              <Picker.Item label="Selecione um Status" value="preventivo" />
-              {statusOptions}
+              <Picker.Item label="Selecione uma categoria" value="" />
+              <Picker.Item label="Enchente" value="enchente" />
+              <Picker.Item label="Deslizamento" value="deslizamento" />
+              <Picker.Item label="Bloqueio" value="bloqueio" />
             </Picker>
           )}
-          name="status"
+          name="category"
         />
       </PickerContainer>
-      {errors.status && <ErrorText>{errors.status.message}</ErrorText>}
+      {errors.category && <ErrorText>{errors.category.message}</ErrorText>}
     </>
   );
 };
 
-export default StatusPicker;
+export default CategoryPicker;

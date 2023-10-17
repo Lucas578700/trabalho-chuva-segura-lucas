@@ -1,26 +1,20 @@
 import styled from 'styled-components/native';
 
-export const InputContainer = styled.View`
-  margin-bottom: 20px;
-`;
-
 export const Button = styled.TouchableOpacity`
-  background-color: #7fbef9;
   width: 100%;
-  height: 45px;
+  padding: 8px;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
+  border-radius: 3px;
+  border: 1px solid #68B2F8;
+  background: #68B2F8;
+  margin-top: 10%;
+  margin-bottom: 10%;
 `;
 
 export const Text = styled.Text`
   color: #FFF;
   text-align: center;
-`;
-
-export const Label = styled.Text`
-  font-size: 16px;
-  margin-bottom: 5px;
 `;
 
 export const ImageName = styled.Text`
